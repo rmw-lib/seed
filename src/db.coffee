@@ -52,7 +52,7 @@ export default class Db
       if cost % 1000 == 500
         @clear()
 
-      console.log ip, id/1000, "=>", cost/1000
+      # console.log ip, id/1000, "=>", cost/1000
       ip_delay.putSync ip_port, cost
       delay_ip.putSync cost, ip_port
       return
