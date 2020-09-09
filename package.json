@@ -1,0 +1,32 @@
+{
+  "name": "@rmw/seed",
+  "version": "0.0.2",
+  "repository": "https://github.com/rmw-lib/seed",
+  "author": "i@rmw.link",
+  "license": "MulanPSL-2.0",
+  "exports": {
+    ".": "./lib/index.js",
+    "./": "./lib/"
+  },
+  "files": [
+    "/lib"
+  ],
+  "dependencies": {
+    "@rmw/env": "^0.0.2",
+    "@rmw/ip-port-bin": "^0.0.7",
+    "@rmw/lmdb": "^0.0.8",
+    "@rmw/lock": "^0.0.11",
+    "@rmw/thisfile": "^0.0.2"
+  },
+  "devDependencies": {
+    "@rmw/md-include": "^0.4.5",
+    "coffeescript": "^2.5.1",
+    "colortape": "^0.1.2",
+    "nodemon": "^2.0.4",
+    "tape": "^5.0.1"
+  },
+  "scripts": {
+    "prepare": "rm -rf lib && rsync -av --include='*/' --include='*.js' --exclude=* src/ lib/ && npx coffee --compile --output lib src/"
+  },
+  "type": "module"
+}
