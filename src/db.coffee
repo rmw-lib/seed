@@ -80,12 +80,12 @@ export default class Db
       try
         s = await seed(ip, port)
       catch err
-        console.log err
+        console.error err
         s = undefined
       if s
         cost = (new Date() - begin) * 1000 + parseInt(Math.random() * 1000)
-        console.log cost, ip_port_str(ip, port)
-        await @put n, cost, ip, port
+        console.log n, cost, ip_port_str(ip, port)
+        await @put cost, ip, port
         await @put -1, ...s
       else
         await @put MAX_ID, ip, port

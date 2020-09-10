@@ -1,6 +1,6 @@
 #!/usr/bin/env coffee
 
-import console from './consoleG'
+import console from './console'
 import Lock from '@rmw/lock'
 import Db from './db'
 
