@@ -1,5 +1,6 @@
 #!/usr/bin/env coffee
 
+import console from './consoleG'
 import Lock from '@rmw/lock'
 import Db from './db'
 
@@ -39,7 +40,7 @@ export default seed = new Proxy(
             try
               c = await conn(ip, port)
             catch err
-              console.error "❌", ip, err
+              console.error ip, err
               # await db.rm ip, port
               return
             if c.isReady

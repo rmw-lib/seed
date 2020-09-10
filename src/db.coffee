@@ -1,8 +1,9 @@
 import Lmdb from './lmdb'
 import {join} from 'path'
-import {ip_port_bin, bin_ip_port} from '@rmw/ip-port-bin'
+import {ip_port_str, ip_port_bin, bin_ip_port} from '@rmw/ip-port-bin'
 import sleep from 'await-sleep'
 import {DIR} from './const.mjs'
+import console from './console'
 
 MAX_ID = 0xFFFF_FFFF
 MAX_LENGTH = 0xFFFF
@@ -83,7 +84,8 @@ export default class Db
         s = undefined
       if s
         cost = (new Date() - begin) * 1000 + parseInt(Math.random() * 1000)
-        await @put cost, ip, port
+        console.log cost, ip_port_str(ip, port)
+        await @put n, cost, ip, port
         await @put -1, ...s
       else
         await @put MAX_ID, ip, port
