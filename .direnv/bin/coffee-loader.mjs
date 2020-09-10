@@ -72,7 +72,7 @@ export function transformSource(source, context, defaultTransformSource) {
   // for all imported CoffeeScript files.
   if (extensionsRegex.test(url)) {
     return {
-      source: CoffeeScript.compile(source.toString('utf8'), {
+      source: "import 'source-map-support/register';"+CoffeeScript.compile(source.toString('utf8'), {
         bare: true,
         filename: url
       })
