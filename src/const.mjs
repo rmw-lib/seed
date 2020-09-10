@@ -1,4 +1,4 @@
-import DIR_CACHE from '@rmw/env/dir/cache'
+import ENV from '@rmw/env'
 import {join} from 'path'
 
-export const DIR = join(DIR_CACHE, "seed");
+export const DIR = join(ENV.CACHE, "seed");

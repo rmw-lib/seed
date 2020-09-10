@@ -12,11 +12,13 @@
     "/lib"
   ],
   "dependencies": {
-    "@rmw/env": "^0.0.2",
+    "@rmw/console": "^0.0.4",
+    "@rmw/env": "^0.0.11",
     "@rmw/ip-port-bin": "^0.0.7",
     "@rmw/lmdb": "^0.0.8",
     "@rmw/lock": "^0.0.11",
     "@rmw/thisfile": "^0.0.2",
+    "await-sleep": "^0.0.1",
     "signale": "^1.4.0"
   },
   "devDependencies": {
