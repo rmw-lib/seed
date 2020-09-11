@@ -84,7 +84,7 @@ export default class Db
         s = undefined
       if s
         cost = (new Date() - begin) * 1000 + parseInt(Math.random() * 1000)
-        console.log n, cost, ip_port_str(ip, port)
+        console.log n, cost/1000, ip_port_str(ip, port)
         await @put cost, ip, port
         await @put -1, ...s
       else

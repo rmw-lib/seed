@@ -1,7 +1,6 @@
 #!/usr/bin/env coffee
-
-import fs from 'fs'
 import {DIR} from './const.mjs'
+import fs from 'fs'
 import {promisify} from 'util'
 import {join,dirname,resolve} from 'path'
 import Lmdb from './lmdb'
@@ -27,6 +26,10 @@ dump = (dirpath, name)=>
   )
 
 do =>
+  console.log DIR
+  if not fs.existsSync DIR
+    return
   readdir = promisify fs.readdir
   for i in await readdir(DIR)
     await dump DIR,i
+  process.exit()

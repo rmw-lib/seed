@@ -13,7 +13,7 @@
   ],
   "dependencies": {
     "@rmw/console": "^0.0.6",
-    "@rmw/env": "^0.0.13",
+    "@rmw/env": "^0.0.14",
     "@rmw/ip-port-bin": "^0.0.7",
     "@rmw/lmdb": "^0.0.8",
     "@rmw/lock": "^0.0.11",
@@ -26,6 +26,7 @@
     "coffeescript": "^2.5.1",
     "colortape": "^0.1.2",
     "nodemon": "^2.0.4",
+    "source-map-support": "^0.5.19",
     "tape": "^5.0.1"
   },
   "scripts": {
