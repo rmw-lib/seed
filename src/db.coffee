@@ -73,6 +73,7 @@ export default class Db
     for {key, value} from delay_ip start:1
       if exist.has value
         delay_ip.removeSync key
+        continue
       exist.add value
       yield bin_ip_port value
     for await i from @boot()
