@@ -68,7 +68,12 @@ export default class Db
       ip_delay.removeSync ip_port
 
   @::[Symbol.asyncIterator] = ->
-    for {key, value} from @delay_ip start:1
+    exist = new Set()
+    {delay_ip} = @
+    for {key, value} from delay_ip start:1
+      if exist.has value
+        delay_ip.removeSync key
+      exist.add value
       yield bin_ip_port value
     for await i from @boot()
       yield i
