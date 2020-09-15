@@ -12,7 +12,7 @@ PWD = resolve thisdir(`import.meta`), '../net-'
 dump = (dirpath, name)=>
   [trx,ip_delay,delay_ip] = Lmdb(join dirpath, name)
 
-  outpath = PWD+name+"/seed.csv"
+  outpath = PWD+name+"/seed/nkn.csv"
   seed = fs.createWriteStream outpath
 
   for await {value} from delay_ip(limit:512)
