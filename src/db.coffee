@@ -71,10 +71,12 @@ export default class Db
     exist = new Set()
     {delay_ip} = @
     for {key, value} from delay_ip start:1
-      if exist.has value
+      vb = value.toString('binary')
+      if exist.has vb
         delay_ip.removeSync key
         continue
-      exist.add value
+      ip_delay.put value, key
+      exist.add vb
       yield bin_ip_port value
     for await i from @boot()
       yield i
