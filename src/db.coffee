@@ -69,7 +69,7 @@ export default class Db
 
   @::[Symbol.asyncIterator] = ->
     exist = new Set()
-    {delay_ip} = @
+    {delay_ip, ip_delay} = @
     for {key, value} from delay_ip start:1
       vb = value.toString('binary')
       if exist.has vb
