@@ -67,13 +67,14 @@ export default class Db
         delay_ip.removeSync id
       ip_delay.removeSync ip_port
 
-  [Symbol.iterator] : ->
+  @::[Symbol.asyncIterator] = ->
     for {key, value} from @delay_ip start:1
       yield bin_ip_port value
     for await i from @boot()
       yield i
+    return
 
-  refresh: (iter)->
+  refresh: ->
     {trx, seed, ip_delay, delay_ip} = @
     n = 0
     for await [ip,port] from @
