@@ -66,7 +66,8 @@ export default class Db
       if id
         delay_ip.removeSync id
       ip_delay.removeSync ip_port
-  iter: ->
+
+  @::[Symbol.iterator] = ->
     for {key, value} from @delay_ip start:1
       yield bin_ip_port value
     for await i from @boot()
@@ -75,7 +76,7 @@ export default class Db
   refresh: (iter)->
     {trx, seed, ip_delay, delay_ip} = @
     n = 0
-    for await [ip,port] from @iter()
+    for await [ip,port] from @
       begin = new Date()
       try
         s = await seed(ip, port)
