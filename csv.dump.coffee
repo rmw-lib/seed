@@ -1,13 +1,13 @@
 #!/usr/bin/env coffee
-import {DIR} from './const.mjs'
+import {DIR} from './src/const.mjs'
 import fs from 'fs'
 import {promisify} from 'util'
 import {join,dirname,resolve} from 'path'
-import Lmdb from './lmdb'
+import Lmdb from './src/lmdb'
 import {bin_ip_port, ip_port_str} from '@rmw/ip-port-bin'
 import {thisdir,thisfile} from '@rmw/thisfile'
 
-PWD = resolve thisdir(`import.meta`), '../../net-'
+PWD = resolve thisdir(`import.meta`), '../net-'
 
 dump = (dirpath, name)=>
   [trx,ip_delay,delay_ip] = Lmdb(join dirpath, name)
