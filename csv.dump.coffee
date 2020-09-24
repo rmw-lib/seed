@@ -7,7 +7,7 @@ import Lmdb from './src/lmdb'
 import {bin_ip_port, ip_port_str} from '@rmw/ip-port-bin'
 import {thisdir,thisfile} from '@rmw/thisfile'
 
-PWD = resolve thisdir(`import.meta`), '../net-'
+PWD = resolve thisdir(`import.meta`), '../net_'
 
 dump = (dirpath, name)=>
   [trx,ip_delay,delay_ip] = Lmdb(join dirpath, name)
