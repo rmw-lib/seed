@@ -1,7 +1,6 @@
 #!/usr/bin/env coffee
 
 import seed from '../src/index'
-import {seed as Xxx} from '../src/index'
 import test from 'tape'
 
 test 'seed', (t)=>
