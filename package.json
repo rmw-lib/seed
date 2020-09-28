@@ -12,7 +12,7 @@
     "/lib"
   ],
   "dependencies": {
-    "@rmw/console": "^0.0.7",
+    "@rmw/console": "^0.0.8",
     "@rmw/env": "^0.0.14",
     "@rmw/ip-port-bin": "^0.0.7",
     "@rmw/lmdb": "^0.0.10",
