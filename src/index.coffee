@@ -1,7 +1,7 @@
 #!/usr/bin/env coffee
 
 import console from './console'
-import Lock from '@rmw/lock'
+# import Lock from '@rmw/lock'
 import Db from './db'
 
 export default seed = new Proxy(
