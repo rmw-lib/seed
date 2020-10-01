@@ -90,7 +90,10 @@ export default class Db
       try
         s = await seed(ip, port)
       catch err
-        console.error err
+        if err.code
+          console.error err.code, err.config?.url
+        else
+          console.error err
         s = undefined
       if s
         cost = (new Date() - begin) * 1000 + parseInt(Math.random() * 1000)
